@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        button {
+            height: 100px;
+            width: 100px;
+            background-color:rgb(52, 44, 203);
+            color:white;
+            
+        }
+        body{
+            text-align: center;
+
+        }
+    </style>
+    <script>
+        var c = 0;
+        let a = [];
+
+        function myfunction(n) {
+          
+            if (c % 2 == 0) {
+                a[n] = "s";
+                document.getElementById(n).innerHTML = "s";
+                document.getElementById(n).style.fontSize = "20px";
+                c = c + 1;
+               
+                check(a);
+            } else {
+                
+                a[n] = "o";
+                document.getElementById(n).innerHTML = "o";
+                document.getElementById(n).style.fontSize = "20px";
+                c = c + 1;
+               
+                check(a);
+            }
+        }
+
+        function check(a) {
+            if (
+                (a[1] == a[2] && a[2] == a[3] && a[3] == "s") ||
+                (a[1] == a[4] && a[4] == a[7] && a[7] == "s") ||
+                (a[1] == a[5] && a[5] == a[9] && a[9] == "s") ||
+                (a[2] == a[5] && a[5] == a[8] && a[8] == "s") ||
+                (a[3] == a[6] && a[6] == a[9] && a[9] == "s") ||
+                (a[4] == a[5] && a[5] == a[6] && a[6] == "s") ||
+                (a[7] == a[8] && a[8] == a[9] && a[9] == "s") ||
+                (a[3] == a[5] && a[5] == a[7] && a[7] == "s")
+            ) {
+                alert("Person s is the winner");
+            } else if (
+                (a[1] == a[2] && a[2] == a[3] && a[3] == "o") ||
+                (a[1] == a[4] && a[4] == a[7] && a[7] == "o") ||
+                (a[1] == a[5] && a[5] == a[9] && a[9] == "o") ||
+                (a[2] == a[5] && a[5] == a[8] && a[8] == "o") ||
+                (a[3] == a[6] && a[6] == a[9] && a[9] == "o") ||
+                (a[4] == a[5] && a[5] == a[6] && a[6] == "o") ||
+                (a[7] == a[8] && a[8] == a[9] && a[9] == "o") ||
+                (a[3] == a[5] && a[5] == a[7] && a[7] == "o")
+            ) {
+                alert("Person o is the winner");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Tic Toc Toie Game</h1>
+
+    <button type="button" id="1" onClick="myfunction(1)">.</button>
+    <button type="button" id="2" onClick="myfunction(2)">.</button>
+    <button type="button" id="3" onClick="myfunction(3)">.</button><br>
+    <button type="button" id="4" onClick="myfunction(4)">.</button>
+    <button type="button" id="5" onClick="myfunction(5)">.</button>
+    <button type="button" id="6" onClick="myfunction(6)">.</button><br>
+    <button type="button" id="7" onClick="myfunction(7)">.</button>
+    <button type="button" id="8" onClick="myfunction(8)">.</button>
+    <button type="button" id="9" onClick="myfunction(9)">.</button><br>
+</body>
+</html>
